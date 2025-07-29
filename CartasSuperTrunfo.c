@@ -74,11 +74,27 @@ void CadastrarCartaSuperTrunfo(CartaSuperTrunfo *carta) {
 
 int main() {
     // Definição das Cartas:
-    CartaSuperTrunfo carta1, carta2;
+    CartaSuperTrunfo carta1 = {
+        "A001",
+        "PR",
+        "CURITIBA",
+        1000,
+        10000.00,
+        20000.00,
+        12
+    }, carta2 = {
+        "A002",
+        "BH",
+        "SALVADOR",
+        2000,
+        20000.00,
+        30000.00,
+        34
+    };
 
     // Cadastro das Cartas:
-    CadastrarCartaSuperTrunfo(&carta1);
-    CadastrarCartaSuperTrunfo(&carta2);
+    //CadastrarCartaSuperTrunfo(&carta1);
+    //CadastrarCartaSuperTrunfo(&carta2);
 
     // Exibição dos Dados das Cartas:
     ExibirCartaSuperTrunfo(carta1);
