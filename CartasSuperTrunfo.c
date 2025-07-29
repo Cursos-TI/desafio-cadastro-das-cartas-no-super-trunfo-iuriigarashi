@@ -22,7 +22,7 @@ typedef struct {
     int populacao;
     float area;
     float pib;
-    int numerosDePontosTuristicos;
+    int qtdDePontosTuristicos;
 }CartaSuperTrunfo;
 
 void ImprimirSeparadorCarta() {
@@ -38,7 +38,7 @@ void ExibirCartaSuperTrunfo (CartaSuperTrunfo carta) {
     printf("Populacao: %d\n", carta.populacao);
     printf("Area: %.2f\n", carta.area);
     printf("PIB: %.2f\n", carta.pib);
-    printf("Qtd. Pontos Turisticos: %d\n", carta.numerosDePontosTuristicos);
+    printf("Qtd. Pontos Turisticos: %d\n", carta.qtdDePontosTuristicos);
     ImprimirSeparadorCarta();
     printf("\n");
 }
@@ -64,8 +64,8 @@ void CadastrarCartaSuperTrunfo(CartaSuperTrunfo *carta) {
     printf("Digite o PIB: ");
     scanf("%f", &carta->pib);
     // Cadastrar numerosDePontosTuristicos
-    printf("Digite a Qtd. de Pontos Turisticos");
-    scanf("%d", &carta->numerosDePontosTuristicos);
+    printf("Digite a Qtd. de Pontos Turisticos: ");
+    scanf("%d", &carta->qtdDePontosTuristicos);
 
     printf("\nCarta ID: %s cadastrada com sucesso!\n\n", carta->codigoDaCarta);
 }
@@ -73,17 +73,14 @@ void CadastrarCartaSuperTrunfo(CartaSuperTrunfo *carta) {
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    CartaSuperTrunfo carta1;
+    CartaSuperTrunfo carta1, carta2;
 
     // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
     CadastrarCartaSuperTrunfo(&carta1);
+    CadastrarCartaSuperTrunfo(&carta2);
     // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
-    
     ExibirCartaSuperTrunfo(carta1);
+    ExibirCartaSuperTrunfo(carta2);
 
     return 0;
 }
