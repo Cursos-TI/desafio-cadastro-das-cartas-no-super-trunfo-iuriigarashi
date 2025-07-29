@@ -6,6 +6,24 @@
 // Siga os comentários para implementar cada parte do desafio.
 //Teste larissa
 
+/* Definições de Tamanho de String - Utilizado para definir o tamanho do vetor de char e
+ evitar que o usuário extrapole o número de caracteres no scanf() @TODO
+ - Tamanho inclui caractere '\0' -*/
+#define TAM_SIGLA 3 // A sigla de um estado contém 2 caracteres - 2 caracteres + '\0'
+#define TAM_CODIGO 5 // Padrão de código "A001", "A002", etc. - 4 caracteres + '\0'
+#define TAM_NOMECIDADE 51 // Máximo de 50 caracteres por nome de cidade. - 50 caracteres + '\0'
+
+// Cria e define a estrutura CartaSuperTrunfo com os atributos definidos
+typedef struct {
+    char estado[TAM_SIGLA];
+    char codigoDaCarta[TAM_CODIGO];
+    char nomeDaCidade[TAM_NOMECIDADE];
+    int populacao;
+    float area;
+    float pib;
+    int numerosDePontosTuristicos;
+}CartaSuperTrunfo;
+
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
@@ -17,6 +35,8 @@ int main() {
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
-
+    printf("teste\n\n");
     return 0;
 }
+
+
