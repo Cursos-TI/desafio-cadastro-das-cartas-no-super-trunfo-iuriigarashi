@@ -17,17 +17,35 @@
 typedef struct {
     char estado[TAM_SIGLA];
     char codigoDaCarta[TAM_CODIGO];
-    char nomeDaCidade[TAM_NOMECIDADE];
+    char cidade[TAM_NOMECIDADE];
     int populacao;
     float area;
     float pib;
     int numerosDePontosTuristicos;
 }CartaSuperTrunfo;
 
+void ExibirCartaSuperTrunfo (CartaSuperTrunfo carta) {
+    printf("Estado: %s\n", carta.estado);
+    printf("Codigo da Carta: %s\n", carta.codigoDaCarta);
+    printf("Cidade: %s\n", carta.cidade);
+    printf("Populacao: %d\n", carta.populacao);
+    printf("Area: %.2f\n", carta.area);
+    printf("PIB: %.2f\n", carta.pib);
+    printf("Qtd. Pontos Turisticos: %d\n", carta.numerosDePontosTuristicos);
+}
+
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
+    CartaSuperTrunfo carta = {
+        "PR",
+        "A001",
+        "CURITIBA",
+        3000,
+        1000.00,
+        2000.00,
+        12
+    };
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
@@ -35,7 +53,7 @@ int main() {
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
-    printf("teste\n\n");
+    ExibirCartaSuperTrunfo(carta);
     return 0;
 }
 
