@@ -39,12 +39,14 @@ void ExibirCartaSuperTrunfo (CartaSuperTrunfo carta) {
     printf("Area: %.2f\n", carta.area);
     printf("PIB: %.2f\n", carta.pib);
     printf("Qtd. Pontos Turisticos: %d\n", carta.qtdDePontosTuristicos);
+    printf("Densidade Populacional: %.2f\n", carta.populacao/carta.area);// População / Área
+    printf("PIB per Capita: %.2f\n", carta.pib/carta.populacao);// PIB / População
     ImprimirSeparadorCarta();
     printf("\n");
 }
 
 void CadastrarCartaSuperTrunfo(CartaSuperTrunfo *carta) {
-    printf("Cadastro de carta:\n");
+    printf("Cadastro de carta:\n\n");
     // Cadastrar codigoDaCarta
     printf("Digite o Codigo da carta: ");
     scanf("%s", carta->codigoDaCarta);
@@ -71,13 +73,13 @@ void CadastrarCartaSuperTrunfo(CartaSuperTrunfo *carta) {
 }
 
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+    // Definição das Cartas:
     CartaSuperTrunfo carta1, carta2;
 
     // Cadastro das Cartas:
     CadastrarCartaSuperTrunfo(&carta1);
     CadastrarCartaSuperTrunfo(&carta2);
+
     // Exibição dos Dados das Cartas:
     ExibirCartaSuperTrunfo(carta1);
     ExibirCartaSuperTrunfo(carta2);
